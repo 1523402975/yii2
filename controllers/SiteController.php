@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -11,6 +12,17 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
+    public function actionSay($message = 'Hello')
+    {
+
+        return $this->render('say', ['message' => $message]);
+    }
+
+    public function actionBiaoBai($message = 'Hello')
+    {
+        return $this->render('biaoBai', ['message' => $message]);
+    }
+
     public function behaviors()
     {
         return [
